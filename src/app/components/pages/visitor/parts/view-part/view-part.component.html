@@ -1,0 +1,34 @@
+<div class="row bg-baselard-blue text-center fc-wit">
+  <div class="col-12">
+    <h2>View - {{part.partname}}</h2>
+  </div>
+</div>
+<div class="row bg-baselard-yellow">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+        <div class="row">
+          <div class="col6"><h2>{{part.partname}}</h2></div>
+          <div class="col6 "><button (click)="goToEdit()" class="btn btn-outline-warning pull-right">Edit</button></div>
+        </div>
+
+          <hr/>
+        </div>
+        <div class="card-text">
+
+          <p>Manufacturer : {{part.manufacturer.name}}</p>
+          <p>Set : {{part.set}}</p>
+          <p>Description : {{part.description}}</p>
+        </div>
+        <hr/>
+        <div class="card-text">
+          <h3>Stats</h3>
+          <p>Type : {{part.type}}</p>
+          <p>Damage Rating: {{part.stats.damageRating}}</p>
+          <p>Armor Rating: {{part.stats.armorRating}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

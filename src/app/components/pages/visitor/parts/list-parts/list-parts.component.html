@@ -1,0 +1,14 @@
+<div class="row bg-baselard-blue text-center fc-wit">
+  <div class="col-12">
+    <h2>All parts</h2>
+  </div>
+</div>
+<div class="row bg-baselard-yellow">
+
+
+  <div *ngFor="let part of parts">
+    <div>
+      <app-parts-list-item [part]="part"></app-parts-list-item>
+    </div>
+  </div>
+</div>

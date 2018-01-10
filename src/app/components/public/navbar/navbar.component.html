@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/visitor']">BC's Bot Builder</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a  class="nav-link" [routerLink]="['/visitor']">Home</a>
+
+      </li>
+      <li class="nav-item dropdown" routerLinkActive="active">
+        <a  class="nav-link" [routerLink]="['/visitor/bots']">Bots</a>
+      </li>
+      <li class="nav-item dropdown" routerLinkActive="active">
+        <a  class="nav-link" [routerLink]="['/visitor/parts']">Parts</a>
+      </li>
+      <li class="nav-item dropdown" routerLinkActive="active">
+        <a  class="nav-link" [routerLink]="['/visitor/manufacturers']">Manufacturers</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+

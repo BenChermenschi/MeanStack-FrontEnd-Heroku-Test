@@ -1,0 +1,47 @@
+
+
+.bg-color1 {
+  background-color: rgba(1, 41, 95, 1);
+}
+
+.bg-color2 {
+  background-color: rgba(67, 127, 151, 1);
+}
+
+.bg-color3 {
+  background-color: rgba(132, 147, 36, 1);
+}
+
+.bg-color4 {
+  background-color: rgba(255, 179, 15, 1);
+}
+
+.bg-color5 {
+  background-color: rgba(253, 21, 27, 1);
+}
+
+
+.fc-color1 {
+  foreg-color: rgba(1, 41, 95, 1);
+}
+
+.fc-color2 {
+  color: rgba(67, 127, 151, 1);
+}
+
+.fc-color3 {
+  color: rgba(132, 147, 36, 1);
+}
+
+.fc-color4 {
+  color: rgba(255, 179, 15, 1);
+}
+
+.fc-color5 {
+  color: rgba(253, 21, 27, 1);
+}
+
+.fc-wit{
+  color : white;
+}
+

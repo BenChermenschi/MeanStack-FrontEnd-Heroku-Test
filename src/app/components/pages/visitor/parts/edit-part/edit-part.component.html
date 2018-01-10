@@ -1,0 +1,63 @@
+<div class="row bg-baselard-blue text-center fc-wit">
+  <div class="col-12">
+    <h2>Edit - {{part.partname}}</h2>
+  </div>
+</div>
+<div class="row bg-baselard-yellow">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group col-12">
+            <label for="partname">Partname : </label>
+            <input type="text" formControlName="partname" class="form-control" id="partname"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="description">Description : </label>
+            <input type="text" formControlName="description" class="form-control" id="description"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="set">Set : </label>
+            <input type="text" formControlName="set" class="form-control" id="set"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="manufacturer">Manufacturer : </label>
+            <select formControlName="manufacturer" class="form-control" id="manufacturer">
+              <option *ngFor="let manufacturer of manufacturers" value="{{manufacturer.id}}" [selected]="manufacturer.id == prevManufacturer.id">
+                {{manufacturer.prefix}} : {{manufacturer.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-12">
+            <label for="type">Type : </label>
+            <select formControlName="type" class="form-control" id="type">
+              <option *ngFor="let item of types" value="{{item}}">{{item}}</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <p>Stats : </p>
+          </div>
+          <div class="form-group col-12">
+            <label for="damageRating">Damage rating : </label>
+            <input type="text" formControlName="damageRating" class="form-control" id="damageRating"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="armorRating">Armor rating : </label>
+            <input type="text" formControlName="armorRating" class="form-control" id="armorRating"/>
+          </div>
+
+
+          <div class="form-control col-12">
+            <div class="row">
+              <div class="mx-auto">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [disabled]="!myForm.valid">Save</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" (click)="onCancel()">Cancel</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

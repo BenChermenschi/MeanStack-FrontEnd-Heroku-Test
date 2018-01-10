@@ -1,0 +1,168 @@
+<div class="row bg-baselard-blue text-center fc-wit">
+  <div class="col-12">
+    <h2>Edit - {{bot.botname}}</h2>
+  </div>
+</div>
+
+
+<div class="row bg-baselard-yellow">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group col-12">
+            <label for="botname">Botname : </label>
+            <input type="text" formControlName="botname" class="form-control" id="botname" value="{{bot.botname}}"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="description">Description : </label>
+            <input type="text" formControlName="description" class="form-control" id="description" value="{{bot.description}}"/>
+          </div>
+<div class="form-group col-12">
+  <h2>Parts : </h2>
+  <h3>Head</h3>
+  <label for="head"><h4>New head : </h4></label>
+  <select formControlName="head" class="form-control" id="head">
+    <option *ngFor="let onderdeel of heads" value="{{onderdeel.id}}" [selected]="onderdeel.id == prevHead.id">
+      {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+    </option>
+  </select>
+<div class="card">
+  <div class="class-title">
+    <h4>Old head</h4>
+  </div>
+
+  <div class="card-text">
+    <p>manufacturer : {{prevHead.manufacturer.prefix}}</p>
+    <p>set : {{prevHead.set}}</p>
+    <p>name :  {{prevHead.partname}}</p>
+
+    <p>damage rating : {{prevHead.stats.damageRating}} </p>
+    <p>armor rating : {{prevHead.stats.armorRating}} </p>
+    <p>description : {{prevHead.description}}</p>
+  </div>
+</div>
+
+
+</div>
+<div class="form-group col-12">
+  <label for="body"><h4>New body : </h4></label>
+  <select formControlName="body" class="form-control" id="body">
+    <option *ngFor="let onderdeel of bodys" value="{{onderdeel.id}}" [selected]="onderdeel.id == prevBody.id">
+      {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+    </option>
+  </select>
+  <div class="card">
+    <div class="class-title">
+      <h4>Old body</h4>
+    </div>
+
+    <div class="card-text">
+      <p>manufacturer : {{prevBody.manufacturer.prefix}}</p>
+      <p>set : {{prevBody.set}}</p>
+      <p>name :  {{prevBody.partname}}</p>
+      <p>damage rating : {{prevBody.stats.damageRating}} </p>
+      <p>armor rating : {{prevBody.stats.armorRating}} </p>
+      <p>description : {{prevBody.description}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="form-group col-12">
+  <label for="armR"><h4>armR : </h4></label>
+  <select formControlName="armR" class="form-control" id="armR">
+    <option *ngFor="let onderdeel of armRs" value="{{onderdeel.id}}" [selected]="onderdeel.id == prevArmR.id">
+      {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+    </option>
+  </select>
+
+  <div class="card">
+    <div class="class-title">
+      <h4>Old armR</h4>
+    </div>
+
+    <div class="card-text">
+      <p>manufacturer : {{prevArmR.manufacturer.prefix}}</p>
+      <p>set : {{prevArmR.set}}</p>
+      <p>name :  {{prevArmR.partname}}</p>
+      <p>damage rating : {{prevArmR.stats.damageRating}} </p>
+      <p>armor rating : {{prevArmR.stats.armorRating}} </p>
+      <p>description : {{prevArmR.description}}</p>
+    </div>
+  </div>
+</div>
+<div class="form-group col-12">
+  <label for="armL"><h4>armL : </h4></label>
+  <select formControlName="armL" class="form-control" id="armL">
+    <option *ngFor="let onderdeel of armLs" value="{{onderdeel.id}}"[selected]="onderdeel.id == prevArmL.id">
+      {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+    </option>
+  </select>
+
+  <div class="card">
+    <div class="class-title">
+      <h4>Old armL</h4>
+    </div>
+
+    <div class="card-text">
+      <p>manufacturer : {{prevArmL.manufacturer.prefix}}</p>
+      <p>set : {{prevArmL.set}}</p>
+      <p>name :  {{prevArmL.partname}}</p>
+      <p>damage rating : {{prevArmL.stats.damageRating}} </p>
+      <p>armor rating : {{prevArmL.stats.armorRating}} </p>
+      <p>description : {{prevArmL.description}}</p>
+    </div>
+  </div>
+</div>
+<div class="form-group col-12">
+  <label for="legs"><h4>Legs : </h4></label>
+  <select formControlName="legs" class="form-control" id="legs">
+    <option *ngFor="let onderdeel of legs" value="{{onderdeel.id}}" [selected]="onderdeel.id == prevLegs.id">
+      {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+    </option>
+  </select>
+
+  <div class="card">
+    <div class="class-title">
+      <h4>Old legs</h4>
+    </div>
+
+    <div class="card-text">
+      <p>manufacturer : {{prevLegs.manufacturer.prefix}}</p>
+      <p>set : {{prevLegs.set}}</p>
+      <p>name :  {{prevLegs.partname}}</p>
+      <p>damage rating : {{prevLegs.stats.damageRating}} </p>
+      <p>armor rating : {{prevLegs.stats.armorRating}} </p>
+      <p>description : {{prevLegs.description}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="col-12">
+  <h4>please confirm user identity</h4>
+  <div class="form-group col-12">
+    <label for="creator">Creator* : </label>
+    <input type="text" formControlName="creator" class="form-control" id="creator"/>
+  </div>
+  <div class="form-group col-12">
+    <label for="passcode">passcode* : </label>
+    <input type="password" formControlName="passcode" class="form-control" id="passcode"/>
+  </div>
+</div>
+
+
+<div class="form-control col-12">
+  <div class="row">
+    <div class="mx-auto">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Save</button>
+      <button class="btn btn-outline-danger my-2 my-sm-0" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+
+</div>

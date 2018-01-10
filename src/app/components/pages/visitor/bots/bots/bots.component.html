@@ -1,0 +1,32 @@
+<div class="container-fluid background">
+  <div class="row">
+
+
+    <div class="container-fluid text-center bg-baselard-purple fc-wit">
+      <br/>
+      <h1 class="display-1">Bots</h1>
+      <br/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" routerLinkActive="active">
+              <a  class="nav-link" [routerLink]="['/visitor/bots/list']">List</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a  class="nav-link" [routerLink]="['/visitor/bots/create']">Create</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <router-outlet></router-outlet>
+</div>
+

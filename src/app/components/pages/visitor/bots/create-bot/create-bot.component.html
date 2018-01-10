@@ -1,0 +1,94 @@
+
+<div class="row bg-baselard-blue text-center fc-wit">
+  <div class="col-12">
+    <h2>Create new bot</h2>
+  </div>
+</div>
+<div class="row bg-baselard-yellow">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group col-12">
+            <label for="botname">Botname : </label>
+            <input type="text" formControlName="botname" class="form-control" id="botname"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="description">Description : </label>
+            <input type="text" formControlName="description" class="form-control" id="description"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="creator">Creator : </label>
+            <input type="text" formControlName="creator" class="form-control" id="creator"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="passcode">passcode : </label>
+            <input type="password" formControlName="passcode" class="form-control" id="passcode"/>
+          </div>
+          <div class="form-group col-12">
+            <label for="re_passcode">repeat passcode : </label>
+            <input type="password" formControlName="re_passcode" class="form-control" id="re_passcode"/>
+          </div>
+
+          <div class="form-group col-12">
+            <p>Parts : </p>
+
+
+            <label for="head">head : </label>
+            <select formControlName="head" class="form-control" id="head">
+              <option *ngFor="let onderdeel of heads" value="{{onderdeel.id}}">
+                {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+              </option>
+            </select>
+
+
+
+          </div>
+          <div class="form-group col-12">
+            <label for="body">body : </label>
+            <select formControlName="body" class="form-control" id="body">
+              <option *ngFor="let onderdeel of bodys" value="{{onderdeel.id}}">
+                {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+              </option>
+            </select>
+          </div>
+          <div class="form-group col-12">
+            <label for="armR">armR : </label>
+            <select formControlName="armR" class="form-control" id="armR">
+              <option *ngFor="let onderdeel of armRs" value="{{onderdeel.id}}">
+                {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+              </option>
+            </select>
+          </div>
+          <div class="form-group col-12">
+            <label for="armL">armL : </label>
+            <select formControlName="armL" class="form-control" id="armL">
+              <option *ngFor="let onderdeel of armLs" value="{{onderdeel.id}}">
+                {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+              </option>
+            </select>
+          </div>
+          <div class="form-group col-12">
+            <label for="legs">Legs : </label>
+            <select formControlName="legs" class="form-control" id="legs">
+              <option *ngFor="let onderdeel of legs" value="{{onderdeel.id}}">
+                {{onderdeel.manufacturer.prefix}}'s {{onderdeel.set}} : {{onderdeel.partname}} - {{onderdeel.stats.damageRating}} atk/{{onderdeel.stats.armorRating}} def
+              </option>
+            </select>
+          </div>
+
+          <div class="form-control col-12">
+            <div class="row">
+              <div class="mx-auto">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Save</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" (click)="onCancel()">Cancel</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

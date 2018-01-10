@@ -1,0 +1,76 @@
+<div class="row bg-baselard-blue text-center fc-wit">
+  <div class="col-12">
+    <h2>View - {{bot.botname}}</h2>
+  </div>
+</div>
+
+<div class="row bg-baselard-yellow">
+  <div class="col-8 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <div class="row">
+            <div class="col6"><h2>{{bot.botname}}</h2></div>
+            <div class="col6 ">
+              <button (click)="goToEdit()" class="btn btn-outline-warning">Edit</button>
+              <button (click)="goToDelete()" class="btn butn-outline-danger">Delete</button>
+            </div>
+          </div>
+
+          <hr/>
+        </div>
+        <div class="card-text">
+          <h3>General</h3>
+          <p>Created by : {{bot.creator}}</p>
+          <p>description : </p>
+          <p>{{bot.description}}</p>
+
+          <h3>Stats</h3>
+          <p>armor rating : {{armorRating}}</p>
+          <p>damage rating : {{damageRating}}</p>
+
+          <h3>Parts</h3>
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+
+              <app-partcard [part]="bot.head"></app-partcard>
+
+            </div>
+            <div class="col-4"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <app-partcard [part]="bot.armR"></app-partcard>
+            </div>
+            <div class="col-4">
+              <app-partcard [part]="bot.body"></app-partcard>
+            </div>
+            <div class="col-4">
+              <app-partcard [part]="bot.armL"></app-partcard>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <app-partcard [part]="bot.legs"></app-partcard>
+            </div>
+            <div class="col-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

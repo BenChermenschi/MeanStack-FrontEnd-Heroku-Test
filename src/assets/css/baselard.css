@@ -1,0 +1,47 @@
+.bg-baselard-white {
+  background-color: rgba(252, 254, 253, 1);
+}
+
+.bg-baselard-blue {
+  background-color: rgba(87, 116, 155, 1);
+}
+
+.bg-baselard-yellow {
+  background-color: rgba(238, 155, 31, 1);
+}
+
+.bg-baselard-purple {
+  background-color: rgba(66, 58, 81, 1);
+}
+
+.bg-baselard-green {
+  background-color: rgba(3, 137, 74, 1);
+}
+
+
+.fc-baselard-white {
+  foreg-color: rgba(215, 216, 221, 1);
+}
+
+.fc-baselard-blue {
+  color: rgba(87, 116, 155, 1);
+}
+
+.fc-baselard-yellow {
+  color: rgba(238, 155, 31, 1);
+}
+
+.fc-baselard-purple {
+  color: rgba(66, 58, 81, 1);
+}
+
+.fc-baselard-green {
+  color: rgba(3, 137, 74, 1);
+}
+
+.fc-wit{
+  color : white;
+}
+.bg-wit{
+  background-color : white;
+}
