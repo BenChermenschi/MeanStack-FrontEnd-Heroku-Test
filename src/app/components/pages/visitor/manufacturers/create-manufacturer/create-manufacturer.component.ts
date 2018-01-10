@@ -38,7 +38,7 @@ export class CreateManufacturerComponent implements OnInit {
       this.myForm.value.name,
       this.myForm.value.description,
       this.myForm.value.prefix
-    ).subscribe(result=>console.log(result),
+    ).subscribe(result=>{console.log(result); alert("success")},
       error=>console.log(error))
   }
 }
