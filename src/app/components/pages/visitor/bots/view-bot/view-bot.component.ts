@@ -64,12 +64,21 @@ export class ViewBotComponent implements OnInit {
 
   goToDelete(){
 
+    let promptBox = prompt("Passcode please",'');
+
+
+
+    if (promptBox === this.bot.passcode){
     this.botService.deleteBot(this.bot.id)
       .subscribe(
         result=>console.log(result),
       error=>console.log(error)
       );
     this.router.navigate(['visitor/bots/']);
+
+    }else{
+      alert("acccess denied");
+    }
   }
 
 }
