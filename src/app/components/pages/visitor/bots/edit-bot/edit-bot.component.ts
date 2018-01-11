@@ -195,6 +195,13 @@ export class EditBotComponent implements OnInit {
         this.myForm.value.description = this.bot.description;
       }
 
+      if (this.myForm.value.botname == null || this.myForm.value.botname == ''){
+        valid = false;
+      }
+      if (this.myForm.value.description == null || this.myForm.value.description == ''){
+        valid = false;
+      }
+
       if (this.myForm.value.head == null){
         valid = false;
       }
@@ -213,9 +220,9 @@ export class EditBotComponent implements OnInit {
       if (this.myForm.value.legs == null){
         valid = false;
       }
-      let legs = this.prevLegs.id;
-      if (this.myForm.value.legs != null){
 
+      if (this.myForm.value.legs == null){
+        valid = false;
       }
       console.log("submitting parts");
 

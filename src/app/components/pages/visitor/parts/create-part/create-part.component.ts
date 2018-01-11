@@ -4,6 +4,7 @@ import {Manufacturer} from "../../../../../models/manufacturer.model";
 import {PartService} from "../../../../../services/part.service";
 import {ManufacturerService} from "../../../../../services/manufacturer.service";
 import {Stats} from "../../../../../models/stats.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-part',
@@ -16,7 +17,7 @@ export class CreatePartComponent implements OnInit {
   manufacturers:Manufacturer[];
   stats:Stats
   types:any[];
-  constructor(private partService:PartService,private manufacturerService:ManufacturerService) { }
+  constructor(private partService:PartService,private manufacturerService:ManufacturerService, private router:Router) { }
 
   ngOnInit() {
     this.stats = new Stats(0,0);
@@ -45,6 +46,7 @@ export class CreatePartComponent implements OnInit {
 
   clearForm(){
     this.myForm.reset();
+    this.router.navigate(['visitor/parts/list']);
   }
 
   submit() {
@@ -111,9 +113,17 @@ export class CreatePartComponent implements OnInit {
         damage,
         armor
       ).subscribe(
-        result=>console.log(result),
-        error=>console.log(error)
-      )
+        result => {
+          console.log(result);
+          alert('success');
+          this.router.navigate(['visitor/parts/list']);
+          },
+            error => {
+          console.log(error);
+          alert('an error occured'); }
+      );
+    }else{
+      alert('An error occured : have you filled in all fields?');
     }
 
 

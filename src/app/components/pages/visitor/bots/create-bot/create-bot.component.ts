@@ -4,6 +4,7 @@ import {PartService} from "../../../../../services/part.service";
 import {BotService} from "../../../../../services/bot.service";
 import {forEach} from "@angular/router/src/utils/collection";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-bot',
@@ -18,7 +19,7 @@ export class CreateBotComponent implements OnInit {
   armLs:Part[];
   bodys:Part[];
   legs:Part[];
-  constructor(private partService:PartService,private botService:BotService) { }
+  constructor(private partService:PartService,private botService:BotService, private router:Router) { }
 
   ngOnInit() {
     this.parts= [];
@@ -66,16 +67,63 @@ export class CreateBotComponent implements OnInit {
 
   onCancel(){
     this.clearForm();
+    this.router.navigate(['/visitor/bots/list']);
   }
 
-  clearForm(){
+  clearForm() {
     this.myForm.reset();
   }
 
   submit(){
     console.log(this.myForm);
     if(this.myForm.value.passcode == this.myForm.value.re_passcode){
-      console.log("allowed");
+      console.log('allowed');
+
+
+      let valid = true;
+      if (this.myForm.value.botname == null || this.myForm.value.botname == ''){
+        valid = false;
+      }
+      if (this.myForm.value.description == null || this.myForm.value.description == ''){
+        valid = false;
+      }
+
+      if (this.myForm.value.head == null){
+        valid = false;
+      }
+
+      if (this.myForm.value.armL == null){
+        valid = false;
+      }
+
+      if (this.myForm.value.armR == null){
+        valid = false;
+      }
+
+      if (this.myForm.value.body == null){
+        valid = false
+      }
+      if (this.myForm.value.legs == null){
+        valid = false;
+      }
+
+      if (this.myForm.value.legs == null){
+        valid = false;
+      }
+
+      if (this.myForm.value.creator == null || this.myForm.value.creator == ''){
+        valid = false;
+      }
+
+      if (this.myForm.value.passcode == null ||this.myForm.value.passcode == ''){
+        valid = false;
+      }
+
+      if (this.myForm.value.re_passcode == null ||this.myForm.value.passcode == ''){
+        valid = false;
+      }
+
+      if (valid === true){
     this.botService.createNewBot(
         this.myForm.value.botname,
           this.myForm.value.description,
@@ -87,9 +135,20 @@ export class CreateBotComponent implements OnInit {
           this.myForm.value.body,
           this.myForm.value.legs
     ).subscribe(
-      result=>console.log(result),
-      error=>console.log(error)
-    )  }
+      result => {
+        console.log(result);
+        alert('successfully created bot');
+        this.router.navigate(['/visitor/bots/list']);},
+      error => {
+        console.log(error);
+        alert('data not send');
+      }
+    );
+
+      }else{
+        alert('an error occured, have you filled in all fields ?');
+      }
+    }
   }
 
   onSave(){
