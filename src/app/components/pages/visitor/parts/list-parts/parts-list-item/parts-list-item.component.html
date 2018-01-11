@@ -3,10 +3,10 @@
 <div class="card parts-item">
   <div class="card-body">
     <h5 class="card-title">{{part.partname}}</h5>
-    <p class="card-text">{{part.manufacturer.prefix}}</p>
-    <p class="card-text">{{part.type}}</p>
-    <p class="card-text">{{part.set}}</p>
-    <p class="card-text">{{part.stats.damageRating}}atk & {{part.stats.armorRating}}def</p>
+    <p class="card-text">set : {{part.set}}</p>
+    <p class="card-text">type : {{part.type}}</p>
+    <p class="card-text"> by : {{part.manufacturer.prefix}}</p>
+    <p class="card-text">{{part.stats.damageRating}} atk & {{part.stats.armorRating}} def</p>
     <button class="btn btn-primary" (click)="selectPart()">Details</button>
   </div>
 </div>
