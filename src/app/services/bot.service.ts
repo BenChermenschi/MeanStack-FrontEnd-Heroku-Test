@@ -95,7 +95,7 @@ export class BotService {
           benen,
           waarde.description
         );
-        console.log(bot);
+
         bots.push(bot);
       }
       console.log(bots);
@@ -173,8 +173,8 @@ export class BotService {
           incommingLegs.set);
 
       var bot = new Bot(waarde._id,waarde.botname,waarde.passcode,waarde.creator,hoofd,body,armR,armL,legs,waarde.description);
-      console.log("get bot bot : ");
-      console.log(bot );
+      console.log("get bot  ");
+
       return bot;
     }).catch((error:Response)=> Observable.throw(error));
   }
